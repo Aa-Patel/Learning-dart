@@ -48,6 +48,8 @@ class Zookeeper {
   }
 
   void status_report(List<Animal> animals) {
-    print(animals);
+    for (var animal in animals) {
+      print("${animal.name}: ${animal.fed}");
+    }
   }
 }
