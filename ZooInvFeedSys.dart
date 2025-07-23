@@ -21,6 +21,9 @@ abstract class Animal {
   int age;
   bool fed;
   Animal({required this.name, required this.age, required this.fed}) {}
+
+  @override
+  String toString() => "Name: $name ,Age: $age, Fed: $fed";
 }
 
 class Lion extends Animal {
@@ -48,8 +51,6 @@ class Zookeeper {
   }
 
   void status_report(List<Animal> animals) {
-    for (var animal in animals) {
-      print("${animal.name}: ${animal.fed}");
-    }
+    print(animals);
   }
 }
