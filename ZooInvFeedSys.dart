@@ -8,17 +8,12 @@ void main() {
 
   Zookeeper keeper = Zookeeper();
 
-  Map<String, bool> feeding_tracker = {
-    'simba': simba.fed,
-    'sara': sara.fed,
-    'bheema': bheema.fed,
-    'laddu': laddu.fed,
-  };
+  List<Animal> animals = [simba, sara, bheema, laddu];
 
-  keeper.status_report(feeding_tracker);
+  keeper.status_report(animals);
   keeper.feed(sara);
   keeper.feed(bheema);
-  keeper.status_report(feeding_tracker);
+  keeper.status_report(animals);
 }
 
 abstract class Animal {
@@ -52,7 +47,7 @@ class Zookeeper {
     }
   }
 
-  void status_report(Map<String, bool> map) {
-    print(map);
+  void status_report(List<Animal> animals) {
+    print(animals);
   }
 }
